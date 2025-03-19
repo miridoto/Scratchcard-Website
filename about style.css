@@ -1,0 +1,54 @@
+/* The container for your buttons, images will be on top */
+.image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5; /* Ensure the images are on top */
+  pointer-events: none;
+}
+
+.about-btn {
+  position: absolute;
+  top: 5rem;
+  left: 2.5rem;
+  width: 20rem;
+}
+
+.origin-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20rem;
+  transform: translate(-50%, -50%);
+}
+
+.play-btn {
+  position: absolute;
+  bottom: 5em;
+  right: 5em;
+  width: 20em;
+}
+
+/* Canvas container (scratch card) is behind images */
+#canvas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10; /* Canvas below the images */
+  pointer-events: none;
+}
+
+/* Optional: Apply to the canvas if needed */
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+
+
+
+
