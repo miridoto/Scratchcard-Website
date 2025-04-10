@@ -7,8 +7,8 @@ let isMobile;
 
 function preload() {
   // Load images for desktop and mobile
-  desktopImage = loadImage("scratch me desktop.jpg");
-  mobileImage = loadImage("scratch me mobile.jpg");
+  desktopImage = loadImage("scratch me desktop.webp");
+  mobileImage = loadImage("scratch me mobile.webp");
   coin = loadImage("coin.png");
 }
 
@@ -55,7 +55,7 @@ function draw() {
   // Display coin cursor
   let x = mouseIsPressed ? mouseX : (touches.length > 0 ? touches[0].x : mouseX);
   let y = mouseIsPressed ? mouseY : (touches.length > 0 ? touches[0].y : mouseY);
-  image(coin, x - 50, y - 50, 300, 300);
+  image(coin, x - 50, y - 50, 100, 100);
 
   // Calculate how much area has been scratched off
   scratchedAmount = countScratchedPixels();
@@ -157,7 +157,7 @@ class Dust {
     this.vx = random(-1, 1);
     this.vy = random(3, 5);
     this.size = random(2, 4);
-    this.alpha = 255;
+    this.alpha = 200;
   }
   update() {
     this.x += this.vx;
