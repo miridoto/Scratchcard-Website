@@ -1,3 +1,13 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;       /* Prevent scrollbars */
+  height: 100%;
+  width: 100%;
+  touch-action: none;     /* Prevent touch-based scrolling (especially on mobile) */
+}
+
+
 /* The container for your buttons, images will be on top */
 .image-container {
   position: relative;
@@ -30,22 +40,22 @@
   }
 }
 
-
 @media screen and (max-width: 479px) {
   .link-image {
     position: static;
     display: block;
-    margin: 5vh auto;
-    width: 40vw;
-    max-width: 120px;
+    margin: 10vh auto;
+    width: 60vw;
+    max-width: 300px;
+    pointer-events: none;
   }
 
   .image-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 5vh 0;
+    pointer-events: none;
   }
 }
 
