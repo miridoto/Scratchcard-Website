@@ -228,6 +228,10 @@ function mouseDragged() {
   if (mouseX > cardX && mouseX < cardX + cols * cellSize &&
     mouseY > cardY && mouseY < cardY + rows * cellSize) {
     scratch(mouseX - cardX, mouseY - cardY, pmouseX - cardX, pmouseY - cardY);
+
+    if (!scratchSound.isPlaying()) {
+      scratchSound.play(); // Play scratch sound while dragging
+    }
   }
 }
 

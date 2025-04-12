@@ -1,34 +1,52 @@
 /* The container for your buttons, images will be on top */
 .image-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 5; /* Ensure the images are on top */
-  pointer-events: none;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
 }
 
-.about-btn {
+.link-image {
   position: absolute;
-  top: 5rem;
-  left: 2.5rem;
-  width: 20rem;
+  width: 20vw;           /* Responsive width */
+  max-width: 20vw;      /* Prevent oversized buttons */
 }
 
-.origin-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 20rem;
-  transform: translate(-50%, -50%);
+@media screen and (min-width: 480px) {
+  .about-btn {
+    top: 2vh;
+    left: 2vw;
+  }
+
+  .origin-btn {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .play-btn {
+    bottom: 2vh;
+    right: 2vw;
+  }
 }
 
-.play-btn {
-  position: absolute;
-  bottom: 5em;
-  right: 5em;
-  width: 20em;
+
+@media screen and (max-width: 479px) {
+  .link-image {
+    position: static;
+    display: block;
+    margin: 5vh auto;
+    width: 40vw;
+    max-width: 120px;
+  }
+
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5vh 0;
+  }
 }
 
 /* Canvas container (scratch card) is behind images */
