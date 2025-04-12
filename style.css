@@ -18,8 +18,8 @@ html, body {
 
 .link-image {
   position: absolute;
-  width: 20vw;           /* Responsive width */
-  max-width: 20vw;      /* Prevent oversized buttons */
+  width: 25vw;           /* Responsive width */
+  max-width: 25vw;      /* Prevent oversized buttons */
 }
 
 @media screen and (min-width: 480px) {
@@ -44,7 +44,7 @@ html, body {
   .link-image {
     position: static;
     display: block;
-    margin: 10vh auto;
+    margin: 8vh auto;
     width: 60vw;
     max-width: 300px;
     pointer-events: none;

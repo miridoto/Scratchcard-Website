@@ -1,34 +1,159 @@
-/* The container for your buttons, images will be on top */
+
 .image-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+}
+
+.link-image {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  width: 25vw;           /* Responsive width */
+  max-width: 25vw;      /* Prevent oversized buttons */
+}
+
+h1,h2{
+  font-family: "decoy", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h1,h2{
+  font-family: "decoy", serif;
+  font-weight: 700;
+  font-style: normal;
+  margin-bottom: -0.5em;
+}
+
+p {
+  font-family: "decoy", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+html, body {
   height: 100%;
-  z-index: 5; /* Ensure the images are on top */
-  pointer-events: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  touch-action: none; 
 }
 
-.about-btn {
-  position: absolute;
-  top: 5rem;
-  left: 2.5rem;
-  width: 20rem;
+@media screen and (min-width: 480px) {  /* Desktop View */
+  .back-btn {
+    bottom: 5vh;
+    right: 5vw;
+  }
+
+ .text-container1,
+ .text-container2,
+ .text-container3 {
+   position: absolute;
+   width: 500px;
+   color: white; /* Adjust as needed */
+   padding: 1em;
+   font-size: 1.5rem;
+ }
+
+ /* Top left corner */
+ .text-container1 {
+   top: 2%;
+   left: 2%;
+   text-align: left;
+ }
+
+ /* Bottom center */
+ .text-container2 {
+   bottom: 2%;
+   left: 30%;
+   transform: translateX(-50%);
+   width:700px;
+ }
+
+ /* Middle right */
+ .text-container3 {
+   top: 40%;
+   right: 2%;
+   transform: translateY(-50%);
+   text-align: right;
+   width: 460px;
+ }
+
+ .scratchcard-image {
+   position: absolute;
+   top: 43%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+  
+   width: 400px;  /* Adjust as needed */
+   height: auto;
+   z-index: 5;    /* Make sure it’s above background and below UI if needed */
+ }
+
+ body {
+   background-image: url('about bg desktop.webp');
+   background-size: cover;        
+   background-position: center;    
+   background-repeat: no-repeat;   
+ }
 }
 
-.origin-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 20rem;
-  transform: translate(-50%, -50%);
-}
 
-.play-btn {
-  position: absolute;
-  bottom: 5em;
-  right: 5em;
-  width: 20em;
+@media screen and (max-width: 479px) {
+  body {
+    background-image: url('about bg mobile.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .image-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .link-image {
+    position: static;
+    width: 60vw;
+    max-width: 300px;
+  }
+
+  .text-container1,
+  .text-container2,
+  .text-container3{
+    position: static;
+    width: 90vw;
+    max-width: 500px;
+    text-align: center;
+    color: white;
+  }
+  
+  .scratchcard-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;  /* Adjust as needed */
+    height: auto;
+    margin: 1em 0; /* Optional: spacing around image */
+  }
+
+  /* .scratchcard-image img {
+    width: 3vw;
+    max-width: 15px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  } */
+
+  .text-container1,
+  .text-container2,
+  .text-container3 {
+    font-size: 0.9rem;
+    padding: 0.3em;
+  }
 }
 
 /* Canvas container (scratch card) is behind images */
@@ -47,8 +172,3 @@ canvas {
   left: 0;
   z-index: 5;
 }
-
-
-
-
-

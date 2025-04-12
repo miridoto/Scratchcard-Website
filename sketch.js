@@ -61,7 +61,7 @@ function draw() {
   scratchedAmount = countScratchedPixels();
   
   // If enough area is scratched off, enable buttons
-  if (scratchedAmount > 0.3) {  // 30% scratched off
+  if (scratchedAmount > 0.4) {  // 30% scratched off
     enableButtons();
   }
 }
