@@ -123,7 +123,7 @@ html, body {
 
   .back-btn {
     position: absolute;         /* Ensure it's positioned relative to the nearest positioned ancestor */
-    bottom: 5vh;                /* Distance from bottom */
+    bottom: 10vh;                /* Distance from bottom */
     left: 50%;                  
     transform: translateX(-50%); 
   }
