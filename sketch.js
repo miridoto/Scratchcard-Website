@@ -23,6 +23,7 @@ function setup() {
   canvas.parent('canvas-container'); // Attach canvas to the container
 
   noCursor();
+  
   isMobile = windowWidth < 768; // Check if the screen is mobile-sized
   topLayerImg = isMobile ? mobileImage : desktopImage; // Select correct image
 
@@ -39,6 +40,11 @@ function setup() {
 
   // Disable buttons initially
   disableButtons();
+
+  const loadingScreen = document.getElementById("loading-screen");
+  if (loadingScreen) {
+    loadingScreen.classList.add("hidden");
+  }
 }
 
 function draw() {
@@ -67,7 +73,7 @@ function draw() {
   scratchedAmount = countScratchedPixels();
   
   // If enough area is scratched off, enable buttons
-  if (scratchedAmount > 0.4) {  // 30% scratched off
+  if (scratchedAmount > 0.5) {  // 50% scratched off
     enableButtons();
   }
 }

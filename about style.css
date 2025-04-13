@@ -1,3 +1,29 @@
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff; /* or any color/image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* on top of everything */
+  transition: opacity 0.5s ease;
+}
+
+#loading-screen.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader-text {
+  font-family: "decoy", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2em;
+  color: #000000;
+}
 
 .image-container {
   position: relative;
@@ -38,6 +64,7 @@ html, body {
   padding: 0;
   overflow: hidden;
   touch-action: none; 
+  cursor: none !important;
 }
 
 @media screen and (min-width: 480px) {  /* Desktop View */

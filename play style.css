@@ -1,0 +1,76 @@
+.image-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    z-index: 20;
+}
+  
+.link-image {
+    position: absolute;
+    width: 25vw;           /* Responsive width */
+    max-width: 25vw;      /* Prevent oversized buttons */
+    z-index: 20;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    touch-action: none; 
+    cursor: none !important;
+}
+
+@media screen and (min-width: 480px) {  /* Desktop View */
+    .back-btn {
+      bottom: 40%;
+      right: 5vw;
+      z-index: 20;
+    }
+
+    .play-btn {
+      bottom: 40%;
+      left: 5vw;
+      z-index: 20;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .link-image {
+      position: static;
+      width: 45vw;
+      max-width: 300px;
+    }
+  
+    .play-btn {
+        position: absolute;
+        bottom: 2.5vh;
+        left: 49%;
+        transform: translateX(-100%);
+        z-index: 20;
+      }
+    
+      .back-btn {
+        position: absolute;
+        bottom: 2.5vh;
+        left: 51%;
+        transform: translateX(-0%);
+        z-index: 20;
+      }
+}
+
+#canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10; /* Canvas below the images */
+}
+  
+  /* Optional: Apply to the canvas if needed */
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}

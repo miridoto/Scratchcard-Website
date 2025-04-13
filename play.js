@@ -17,6 +17,7 @@ let fadeSpeed = 5;
 
 let bgImage, bgDesktop, bgMobile;
 let topLayerImg;
+let resizedTopLayerImg;
 let isMobile;
 
 let coin;
@@ -88,6 +89,9 @@ function setup() {
   document.addEventListener("touchmove", function (e) {
     e.preventDefault();
   }, { passive: false });
+
+  resizedTopLayerImg = topLayerImg.get();
+  resizedTopLayerImg.resize(cols * cellSize, rows * cellSize);
 }
 
 function resetGrid() {
@@ -117,10 +121,10 @@ function draw() {
 
   drawGrid();
 
-  let masked = topLayerImg.get();
-  masked.resize(cols * cellSize, rows * cellSize);
-  masked.mask(maskGraphics);
-  image(masked, 0, 0);
+  let masked = resizedTopLayerImg.get();
+masked.mask(maskGraphics);
+image(masked, 0, 0);
+
 
   updateDust();
 
