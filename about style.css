@@ -46,50 +46,50 @@ html, body {
     right: 5vw;
   }
 
- .text-container1,
+ /* .text-container1,
  .text-container2,
  .text-container3 {
    position: absolute;
    width: 500px;
-   color: white; /* Adjust as needed */
+   color: white; 
    padding: 1em;
    font-size: 1.5rem;
- }
+ } */
 
  /* Top left corner */
- .text-container1 {
+ /* .text-container1 {
    top: 2%;
    left: 2%;
    text-align: left;
- }
+ } */
 
  /* Bottom center */
- .text-container2 {
+ /* .text-container2 {
    bottom: 2%;
    left: 30%;
    transform: translateX(-50%);
    width:700px;
- }
+ } */
 
  /* Middle right */
- .text-container3 {
+ /* .text-container3 {
    top: 40%;
    right: 2%;
    transform: translateY(-50%);
    text-align: right;
    width: 460px;
- }
+ } */
 
- .scratchcard-image {
+ /* .scratchcard-image {
    position: absolute;
    top: 43%;
    left: 50%;
    transform: translate(-50%, -50%);
   
-   width: 400px;  /* Adjust as needed */
+   width: 400px;  
    height: auto;
-   z-index: 5;    /* Make sure it’s above background and below UI if needed */
- }
+   z-index: 5;    
+ } */
 
  body {
    background-image: url('about bg desktop.webp');
@@ -102,7 +102,7 @@ html, body {
 
 @media screen and (max-width: 479px) {
   body {
-    background-image: url('about bg mobile.webp');
+    background-image: url('about bg mobile w text.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -121,7 +121,14 @@ html, body {
     max-width: 300px;
   }
 
-  .text-container1,
+  .back-btn {
+    position: absolute;         /* Ensure it's positioned relative to the nearest positioned ancestor */
+    bottom: 5vh;                /* Distance from bottom */
+    left: 50%;                  
+    transform: translateX(-50%); 
+  }
+
+  /* .text-container1,
   .text-container2,
   .text-container3{
     position: static;
@@ -129,16 +136,16 @@ html, body {
     max-width: 500px;
     text-align: center;
     color: white;
-  }
+  } */
   
-  .scratchcard-image {
+  /* .scratchcard-image {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;  /* Adjust as needed */
+    width: 200px;  
     height: auto;
-    margin: 1em 0; /* Optional: spacing around image */
-  }
+    margin: 1em 0; 
+  } */
 
   /* .scratchcard-image img {
     width: 3vw;
@@ -148,12 +155,12 @@ html, body {
     margin: 0 auto;
   } */
 
-  .text-container1,
+  /* .text-container1,
   .text-container2,
   .text-container3 {
     font-size: 0.9rem;
     padding: 0.3em;
-  }
+  } */
 }
 
 /* Canvas container (scratch card) is behind images */
