@@ -33,6 +33,7 @@ let lightningDuration = 50;
 let lightningDelay = 50;
 
 let scratchSound, streamersSound, rainSound;
+let scratchTimeout;
 
 let cardX, cardY;
 let scaleFactor;
@@ -230,8 +231,13 @@ function mouseDragged() {
     scratch(mouseX - cardX, mouseY - cardY, pmouseX - cardX, pmouseY - cardY);
 
     if (!scratchSound.isPlaying()) {
-      scratchSound.play(); // Play scratch sound while dragging
+      scratchSound.loop(); // Play scratch sound while dragging
     }
+    
+    clearTimeout(scratchTimeout);
+  scratchTimeout = setTimeout(() => {
+    scratchSound.stop();
+  }, 200);
   }
 }
 

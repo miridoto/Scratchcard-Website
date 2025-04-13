@@ -5,11 +5,17 @@ let dustParticles = [];
 let scratchedAmount = 0; // Track how much of the scratchcard has been scratched
 let isMobile;
 
+let scratchSound;
+let scratchTimeout;
+
 function preload() {
   // Load images for desktop and mobile
   desktopImage = loadImage("scratch me desktop.webp");
   mobileImage = loadImage("scratch me mobile.webp");
   coin = loadImage("coin.png");
+
+  soundFormats('mp3', 'ogg'); // Optional if using different audio types
+  scratchSound = loadSound('scratch.mp3'); // Make sure the file name is correct
 }
 
 function setup() {
@@ -81,6 +87,15 @@ function touchMoved(event) {
 }
 
 function scratch(x, y, px, py) {
+  if (!scratchSound.isPlaying()) {
+    scratchSound.loop();
+  }
+
+  clearTimeout(scratchTimeout);
+  scratchTimeout = setTimeout(() => {
+    scratchSound.stop();
+  }, 200);
+  
   maskGraphics.push();
   maskGraphics.erase(255, 255); // Erase white pixels (make them transparent in the mask)
 

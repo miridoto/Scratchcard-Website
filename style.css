@@ -38,6 +38,13 @@ html, body {
     bottom: 2vh;
     right: 2vw;
   }
+
+  body {
+    background-image: url('index bg desktop.webp');
+    background-size: cover;        
+    background-position: center;    
+    background-repeat: no-repeat;   
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -56,6 +63,13 @@ html, body {
     justify-content: center;
     align-items: center;
     pointer-events: none;
+  }
+
+  body {
+    background-image: url('index bg mobile.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
 
