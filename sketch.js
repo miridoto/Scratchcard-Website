@@ -7,7 +7,7 @@ let isMobile;
 
 let scratchSound;
 let scratchTimeout;
-let audioInitialized = false;
+// let audioInitialized = false;
 
 function preload() {
   // Load images for desktop and mobile
@@ -19,21 +19,21 @@ function preload() {
   scratchSound = loadSound('scratch.mp3'); // Make sure the file name is correct
 }
 
-function mousePressed() {
-  initAudio();
-}
+// function mousePressed() {
+//   initAudio();
+// }
 
-function touchStarted() {
-  initAudio();
-}
+// function touchStarted() {
+//   initAudio();
+// }
 
-function initAudio() {
-  if (!audioInitialized && scratchSound) {
-    scratchSound.play();    // Briefly play the sound
-    scratchSound.stop();    // Stop immediately — this unlocks the audio context
-    audioInitialized = true;
-  }
-}
+// function initAudio() {
+//   if (!audioInitialized && scratchSound) {
+//     scratchSound.play();    // Briefly play the sound
+//     scratchSound.stop();    // Stop immediately — this unlocks the audio context
+//     audioInitialized = true;
+//   }
+// }
 
 function setup() {
   let canvas = createCanvas(windowWidth, windowHeight);
